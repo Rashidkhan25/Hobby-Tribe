@@ -433,7 +433,7 @@ body {
   margin: auto;
   padding: 1.25rem;
   position: relative;
-  min-height: 19.6875rem;
+  min-height: 20.875rem;
 }
 
 .testimonial-text {
@@ -903,7 +903,7 @@ button[type="submit"] {
   }
 
   .testimonial-nav {
-    top: 85%;
+    top: 90%;
   }
   
   .contact-section {
@@ -962,11 +962,11 @@ button[type="submit"] {
   }
   
   .reach-me2 {
-    font-size: 1rem;
+    font-size: 0.925rem;
   }
   
   .reach-me3 {
-    font-size: 0.825rem;
+    font-size: 0.75rem;
   }
 }
 
