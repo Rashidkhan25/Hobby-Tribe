@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Hobby Tribe</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/classes.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+  </head>
+  <body>
+    <%- include ('partials/header') %>
+    <section id="home">
+      <div class="container-fluid px-0">
+        <div class="row">
+          <div id="home__order1" class="col-lg-6 hd">
+            <h1>
+              Learn <span>New Skills</span><br />
+              with Classes - <span>Live Online </span>& <span>Offline</span>
+            </h1>
+          </div>
+
+          <div id="home__order2" class="col-lg-6">
+            <div class="reach typewriter-box">
+              <p class="reach-text">
+                At Your Convenient <span id="typewriter-word"></span
+                ><span class="cursor"></span>
+              </p>
+            </div>
+
+            <div class="cs">
+              <p class="text-center mt-2">Why Choose Us!</p>
+              <div class="d-flex justify-content-around py-2">
+                <div class="border-right pr-3">
+                  <h5>200+</h5>
+                  <p>Expert Instructors</p>
+                </div>
+                <div class="text-right">
+                  <h5>250+</h5>
+                  <p>Courses</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <h1 class="hobby-heading text-center mt-5">Looking for a <span>Hobby?</span></h1>
+    
+    <main>
+      <aside>
+        <label class="search-label" for="search-hobby">
+          What hobby are you looking for?
+        </label>
+        <input
+          aria-label="Search hobbies"
+          id="search-hobby"
+          name="search-hobby"
+          placeholder="Search for hobbies..."
+          type="search"
+        />
+        <div class="categories-label">Categories</div>
+        <div id="sidebar-genres">
+          <!-- Dynamically added checkboxes -->
+        </div>
+      </aside>
+
+      <section class="cards" id="cards-container">
+        <!-- Dynamic class cards will appear here -->
+      </section>
+    </main>
+
+
+    <%- include ('partials/topscroll') %> <%- include ('partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/classes.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+  </body>
+</html>

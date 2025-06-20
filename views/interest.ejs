@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Preference Form</title>
+  <link rel="stylesheet" href="/css/interest.css" />
+</head>
+<body>
+  <div class="form-container">
+    <form id="learningForm" action="/submit-interest" method="POST">
+  <!-- Mode of Learning -->
+  <section class="card">
+    <h3>Mode of Learning</h3>
+    <div class="options" id="mode-options">
+      <button type="button" class="option selected">Online</button>
+      <button type="button" class="option">Offline</button>
+    </div>
+    <input type="hidden" name="mode" id="modeInput" value="Online" />
+  </section>
+
+  <!-- Preference -->
+  <section class="card">
+    <h3>Would you prefer?</h3>
+    <div class="options" id="preference-options">
+      <button type="button" class="option">Private Classes</button>
+      <button type="button" class="option selected">Group Classes</button>
+    </div>
+    <input type="hidden" name="preference" id="preferenceInput" value="Private Classes" />
+  </section>
+
+  <!-- Availability -->
+  <section class="card">
+    <h3>Availability</h3>
+    <p>You may select multiple options</p>
+    <div class="options days" id="days-options">
+      <button type="button" class="option">Monday</button>
+      <button type="button" class="option">Tuesday</button>
+      <button type="button" class="option">Wednesday</button>
+      <button type="button" class="option selected">Thursday</button>
+      <button type="button" class="option">Friday</button>
+      <button type="button" class="option selected">Saturday</button>
+      <button type="button" class="option">Sunday</button>
+    </div>
+    <input type="hidden" name="days" id="daysInput" value="Thursday,Saturday" />
+
+    <h4>Time of Day</h4>
+    <div class="options time" id="times-options">
+      <button type="button" class="option">Morning</button>
+      <button type="button" class="option">Afternoon</button>
+      <button type="button" class="option selected">Evening</button>
+    </div>
+    <input type="hidden" name="times" id="timesInput" value="Evening" />
+  </section>
+
+  <!-- Budget -->
+  <section class="card">
+    <h3>What is your ideal budget?</h3>
+    <p>Suggested budget is <span class="highlight">Rs. 2000/month</span></p>
+    <div class="budget-value">Rs. <span id="budgetAmount">2000</span></div>
+    <input type="range" name="budget" min="1000" max="7000" step="100" value="2000" id="budgetSlider" />
+    <div class="slider-labels">
+      <span>Rs. 1000</span>
+      <span>Rs. 7000+</span>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="card">
+     <h3>Name</h3>
+    <input type="text" name="name" placeholder="Enter your Name" required />
+     <h3>Phone No.</h3>
+    <input type="text" name="number" placeholder="Enter your Phone Number" required />
+    <h3>Location</h3>
+    <input type="text" name="location" placeholder="Enter your Pincode" required />
+  </section>
+
+  <!-- Submit -->
+  <div class="submit-wrapper">
+    <button type="submit" class="submit-btn">Submit</button>
+  </div>
+
+  <!-- Thank You -->
+  <div id="thankYouMessage" class="hidden">
+    Thank you for showing interest. <br />
+    Our team will contact you soon...
+  </div>
+</form>
+
+  </div>
+
+  <script src="/js/interest.js"></script>
+</body>
+</html>
