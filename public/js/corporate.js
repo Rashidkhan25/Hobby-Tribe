@@ -25,51 +25,69 @@ window.addEventListener("DOMContentLoaded", typeWriter);
 
 // Hero Right
 const imageSets = [
-    [
-      "/images/hobby1.png",
-      "/images/hobby2.png",
-      "/images/hobby3.jpg"
-    ],
-    [
-      "/images/hobby4.jpg",
-      "/images/hobby5.png",
-      "/images/hobby6.png"
-    ],
-    [
-      "/images/hobby7.png",
-      "/images/hobby8.png",
-      "/images/hobby9.png"
-    ],
-    [
-      "/images/hobby10.png",
-      "/images/hobby11.png",
-      "/images/hobby12.png"
-    ]
-  ];
+  [
+    "/images/hobby1.png",
+    "/images/hobby2.png",
+    "/images/hobby3.jpg"
+  ],
+  [
+    "/images/hobby4.jpg",
+    "/images/hobby5.png",
+    "/images/hobby6.png"
+  ],
+  [
+    "/images/hobby7.png",
+    "/images/hobby8.png",
+    "/images/hobby9.png"
+  ],
+  [
+    "/images/hobby10.png",
+    "/images/hobby11.png",
+    "/images/hobby12.png"
+  ]
+];
 
-  let currentSetIndex = 1;
-  const imgElements = document.querySelectorAll(".corporate-right img");
+let currentSetIndex = 1;
+const imgElements = document.querySelectorAll(".corporate-right img");
 
-  function changeImageSet() {
-    imgElements.forEach(img => {
-      img.classList.add("fade-out");
+function changeImageSet() {
+  // Start fade out transition for all images
+  imgElements.forEach(img => {
+    img.classList.add("fade-out");
+    img.classList.remove("fade-in");
+  });
+
+  // Wait for half the transition duration, then change sources
+  setTimeout(() => {
+    const nextSet = imageSets[currentSetIndex];
+    
+    // Change image sources
+    imgElements.forEach((img, i) => {
+      img.src = nextSet[i];
     });
 
+    // Small delay to ensure images are loaded, then fade in
     setTimeout(() => {
-      const nextSet = imageSets[currentSetIndex];
-      imgElements.forEach((img, i) => {
-        img.src = nextSet[i];
+      imgElements.forEach(img => {
+        img.classList.remove("fade-out");
+        img.classList.add("fade-in");
       });
+    }, 50); 
 
-      setTimeout(() => {
-        imgElements.forEach(img => img.classList.remove("fade-out"));
-      }, 50); 
+    // Move to next set
+    currentSetIndex = (currentSetIndex + 1) % imageSets.length;
+  }, 400); // Half of the 0.8s CSS transition duration
+}
 
-      currentSetIndex = (currentSetIndex + 1) % imageSets.length;
-    }, 400); 
-  }
+// Initialize with fade-in class for smooth start
+document.addEventListener('DOMContentLoaded', () => {
+  imgElements.forEach(img => {
+    img.classList.add("fade-in");
+  });
+});
 
-  setInterval(changeImageSet, 5000); 
+// Change image set every 5 seconds
+setInterval(changeImageSet, 5000);
 
 //What do we Offer
 document.querySelectorAll(".unique-offer-header").forEach((header) => {

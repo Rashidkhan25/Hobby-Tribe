@@ -16,6 +16,7 @@ app.get('/', (req, res) => res.render('index'));
 app.get('/about', (req, res) => res.render('about'));
 app.get('/corporate', (req, res) => res.render('corporate'));
 app.get('/classes', (req, res) => res.render('classes'));
+app.get('/blog', (req, res) => res.render('blog'));
 app.get('/interest', (req, res) => {
   const courseTitle = req.query.title;
   res.render('interest', { courseTitle });
@@ -62,6 +63,8 @@ app.post("/submit-interest", (req, res) => {
     Days: req.body.days,
     Times: req.body.times,
     Budget: `Rs. ${req.body.budget}`,
+    Name: req.body.name,
+    Phone: req.body.phone,
     Location: req.body.location
   };
 
@@ -92,6 +95,10 @@ app.post("/submit-interest", (req, res) => {
   xlsx.writeFile(workbook, filePath);
 
   res.render("thankyou");
+});
+
+app.use( (req, res, next) => {
+  res.status(404).render('404');
 });
 
 // Start server

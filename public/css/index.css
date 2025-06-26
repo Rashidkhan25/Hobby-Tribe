@@ -14,7 +14,6 @@ body {
   background: linear-gradient(to right, #f96c85, #faaa5d);
   color: white;
   height: auto;
-  margin-top: 0.3rem;
 }
 
 .hero-text h1 {
@@ -72,8 +71,8 @@ body {
   position: absolute;
   width: 710px;
   height: 280px;
-  top: 324.57px;
-  left: 550px;
+  top: 360.57px;
+  left: 610px;
   background: #9071EF;
   border-radius: 50%;
   transform: rotate(147.59deg);
@@ -85,8 +84,8 @@ body {
   position: absolute;
   width: 710px;
   height: 280px;
-  top: 509.31px;
-  left: 550px;
+  top: 545.31px;
+  left: 610px;
   background: #9071EF;
   border-radius: 50%;
   transform: rotate(147.59deg);
@@ -192,7 +191,7 @@ body {
   margin-top: 3.75rem;
 }
 
-.brand-marquee-section h2 {
+.brand-marquee-section h3 {
   margin-bottom: 1.25rem;
   font-weight: 700;
   font-size: clamp(2.5rem, 8vw, 3.875rem);
@@ -269,7 +268,7 @@ body {
   position: relative;
 }
 
-.quote-header h1 {
+.quote-header h2 {
   font-size: clamp(2.5rem, 8vw, 4.275rem);
   font-weight: 700;
   color: #000;
@@ -377,13 +376,13 @@ body {
   height: clamp(37rem, 50vh, 35.9375rem);
 }
 
-.join-tribe-content h3 {
+.join-tribe-content .mid-head {
   color: #001233;
   font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: 0.625rem;
 }
 
-.join-tribe-content h1 {
+.join-tribe-content .heading {
   font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 700;
   color: white;
@@ -516,7 +515,7 @@ body {
   min-width: 18rem;
 }
 
-.content h1 {
+.content h5 {
   font-size: clamp(2.5rem, 7vw, 3.6875rem);
   font-weight: 700;
   margin-bottom: 1.25rem;
@@ -524,7 +523,7 @@ body {
   width: 575px;
 }
 
-.content h1 span {
+.content h5 span {
   font-weight: 600;
   color: white;
 }
@@ -622,7 +621,7 @@ body {
   text-align: right;
 }
 
-.hobby-text h2 {
+.hobby-text h5 {
   font-size: clamp(2.5rem, 8vw, 3.9375rem);
   margin-bottom: 0.625rem;
   line-height: 1.2;
@@ -718,7 +717,7 @@ body {
     text-align: left;
   }
 
-  .content h1 {
+  .content h5 {
     font-size: 2.25rem;
   }
 
@@ -764,7 +763,7 @@ body {
     height: 6rem;
   }
 
-  .quote-header h1 {
+  .quote-header h2 {
     font-size: clamp(1.875rem, 8vw, 1.875rem);
     font-weight: 700;
     color: #000;
@@ -916,12 +915,12 @@ body {
     width: 380px;
   }
 
-  .content h1 {
-    width: 390px;
+  .content h5 {
+    width: 345px;
   }
 
   .icon {
-    margin-left: -23px;
+    margin-left: -22px;
   }
 
   .guitar {

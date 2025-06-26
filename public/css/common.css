@@ -113,6 +113,50 @@ nav {
   transition: all 0.3s ease;
 }
 
+/* Container that holds the breadcrumb */
+.breadcrumb-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 5px 2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: #999;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+.breadcrumb a {
+  color: #ff5f06;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Sticky effect on scroll */
+.sticky-breadcrumb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* transparent */
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
 /* Footer styles */
 .footer {
   background-color: white;

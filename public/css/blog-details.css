@@ -1,0 +1,344 @@
+#blogDetails {
+    margin-top: 10rem;
+}
+#blogDetails .filters .filters-heading {
+    background-color: red;
+    background-image: linear-gradient(to left, #A30202, #F80202, #FF3E05, #FF5105);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8rem 2rem;
+    color: #fff;
+}
+#blogDetails .filters .filters-heading #reset {
+    cursor: pointer;
+}
+#blogDetails .filters .filters-heading h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+#blogDetails .filters .filters-heading span {
+    font-size: 1rem;
+}
+#blogDetails .filters .filters-body .subcontent {
+    padding: .8rem 2rem;
+    margin-top: 1rem;
+}
+#blogDetails .filters .filters-body .subheading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+#blogDetails .filters .filters-body .subheading h3, #blogDetails .filters .filters-body .subheading i {
+    font-size: 1.5rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+#blogDetails .filters .filters-body .subheading-content .subheading-content-list {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#blogDetails .filters .filters-body .subheading-content input {
+    margin-right: 1rem;
+}
+#blogDetails .filters .filters-body .subheading-content span {
+    font-size: 1.1rem;
+}
+#blogDetails .filters .filters-body .subheading-content .showT {
+    cursor: pointer;
+}
+#blogDetails .filters .filters-body .subheading-subcontent {
+    margin-left: 2.1rem;
+    display: none;
+    align-items: center;
+    margin-top: .3rem;
+}
+#blogDetails .filters .filters-body .subheading-content .tags span {
+    display: inline-block;
+    padding: .1rem .5rem;
+    border: .15rem solid red;
+    border-radius: .5rem;
+    margin-right: .2rem;
+    margin-bottom: .5rem;
+}
+
+#relevantHobbies {
+    margin-top: 5rem;
+}
+.relevantH h2 {
+    font-size: 4.5rem;
+}
+.relevantH h2 span {
+    color: #f90d02;
+}
+#relevantHobbies .category {
+    max-width: 28rem;
+    width: 100%;
+    display: inline-block;
+    border-radius: .5rem;
+    background-color: #fff;
+    box-shadow: 0 0 .9rem 0 gray;
+    margin-bottom: 2.5rem;
+    flex-shrink: 0;
+}
+#relevantHobbies .gif {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    width: 100%;
+}
+#relevantHobbies .category .topLeft, #relevantHobbies .category .topRight {
+    position: absolute;
+    top: 1rem;
+}
+#relevantHobbies .category .topLeft {
+    left: 1rem;
+}
+#relevantHobbies .category .topRight {
+    right: 1rem;
+}
+#relevantHobbies .category .topLeft span, #relevantHobbies .category .topRight i {
+    color: white;
+    padding: .5rem;
+    background-color: red;
+    border-radius: .5rem;
+    font-size: 1rem;
+}
+#relevantHobbies .category .cardTitle {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+#relevantHobbies .category h6 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+#relevantHobbies .category .cardTitle p, #relevantHobbies .category i {
+    font-size: 1.1rem;
+}
+#relevantHobbies .category .cardTitle h6, #relevantHobbies .category p {
+    margin-bottom: 0;
+    align-self: flex-end;
+}
+#relevantHobbies .category .teacherDetail, #relevantHobbies .category .classDetail, #relevantHobbies .category .classDayTime,  #relevantHobbies .category .priceAndButtons {
+    margin-top: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+#relevantHobbies .category .teacherDetail img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+#relevantHobbies .category .teacherDetail .rating, #relevantHobbies .category .teacherDetail .td, #relevantHobbies .category .classDetail .classHrs, #relevantHobbies .category .classDetail .classDate, #relevantHobbies .category .classDetail .classSession {
+    display: flex;   
+}
+#relevantHobbies .category .teacherDetail .td p {
+    font-size: 1.2rem;
+}
+#relevantHobbies .category .teacherDetail p, #relevantHobbies .category .teacherDetail .rating {
+    align-self: center;
+}
+#relevantHobbies .category .teacherDetail .rating input { display: none; } 
+#relevantHobbies .category .teacherDetail .rating label { margin-bottom: 0; } 
+#relevantHobbies .category .teacherDetail .rating label:before { 
+    margin-right: .2rem;
+    font-size: 1rem;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}   
+#relevantHobbies .category .teacherDetail .rating label { 
+    color: #ddd; 
+    float: right; 
+}
+#relevantHobbies .category .teacherDetail .rating input:checked ~ label { color: #FFD700;  } /* hover previous stars in list */
+#relevantHobbies .category .classDetail .classHrs, #relevantHobbies .category .classDetail .classDate, #relevantHobbies .category .classDetail .classSession {
+    align-items: center;
+}
+#relevantHobbies .category .classDetail p {
+    font-size: 1.25rem;
+}
+#relevantHobbies .category .classDayTime span, #relevantHobbies .category .priceAndButtons span del {
+    color: darkgray;
+}
+#relevantHobbies .category .classDayTime span {
+    margin-right: .2rem;
+}
+#relevantHobbies .category .classDayTime span.active {
+    color: red;
+}
+#relevantHobbies .category .priceAndButtons .price span {
+    font-size: 1.3rem;
+}
+#relevantHobbies .category .priceAndButtons .buttons .btn-sm {
+    font-size: .9rem;
+    padding: .5rem .8rem;
+    font-weight: 800;
+}
+#relevantHobbies .category .priceAndButtons .buttons .atc:hover {
+    background-color: transparent;
+}
+#relevantHobbies .category .priceAndButtons .buttons .ft {
+    background-color: #f90d02;
+    border-color: transparent;
+}
+
+#blogPost .post .card {
+    box-shadow: 0 0 0.9rem 0 grey;
+}
+#blogPost .post .card-body ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#blogPost .post .card-body .card-title {
+    font-size: 3rem;
+}
+#blogPost .post .card-body .dateAndName {
+    display: flex;
+    margin: 1.5rem 0;
+}
+#blogPost .post .card-body .dateAndName span {
+    font-size: 1.2rem;
+}
+#blogPost .post .card-body ol {
+    padding-left: initial;
+}
+#blogPost .post .card-body p, .post .card-body li {
+    font-size: 1.5rem;
+}
+#blogPost .post .card-body a {
+    color: inherit;
+    text-decoration: none;
+}
+#blogPost .post .card-body ol li p {
+    margin-top: 10px;
+}
+#blogPost .follow-us .card-body .icons a {
+    text-decoration: none;
+    color: inherit;
+}
+#blogPost .post .card-body a {
+    text-decoration: none;
+}
+#blogPost .post .card-body .viewsShare {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+#blogPost .post .card-body .viewsShare .likeViews {
+    display: flex;    
+    align-items: center;
+}
+#blogPost .post .card-body .viewsShare .likeViews .likes, .post .card-body .viewsShare .likeViews .views {
+    display: flex;
+    align-items: center;
+}
+#blogPost .post .card-body .viewsShare .likeViews i {
+    background: orange;
+    color: white;
+    padding: .3rem;
+}
+#blogPost .post .card-body .viewsShare .likeViews span {
+    padding: 0 .3rem;
+}
+
+.recent-post .card-title {
+    font-size: 2rem;
+    font-weight: 800;
+}
+.recent-post .card-body ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.recent-post .card-body a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#commentsSection {
+    margin-top: 5rem;
+}
+#commentsSection h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+#commentsSection .comments {
+    display: flex;
+    margin-bottom: .5rem;
+    padding-right: 25rem;
+}
+#commentsSection .comments img {
+    max-width: 7rem;
+    max-height: 6rem;
+    margin-right: 2rem;
+}
+
+#postComment {
+    margin-top: 5rem;
+}
+#postComment h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+#postComment .postButton a {
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    padding: .5rem 1.5rem;
+}
+
+#latestNews {
+    margin-top: 8rem;
+}
+#latestNews .newsBox {
+    padding: 3rem;
+    background-color: red;
+}
+/* #latestNews .newsBox .newsLeft {
+    padding-left: 5rem;
+}
+#latestNews .newsBox .newsRight {
+    padding-right: 5rem;
+} */
+#latestNews .newsBox h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+#latestNews .newsBox .autocomplete {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+#latestNews .newsBox .autocomplete > i {
+    position: absolute;
+    right: 1rem;
+    z-index: 9;
+    font-size: 1.2rem;
+    background-color: orange;
+    color: white;
+    padding: .8rem;
+}
+#latestNews .newsBox .autocomplete .form-control {
+    /* width: 25.8rem; */
+    font-size: 1.5rem;
+    border-color: #f90d02;
+    box-shadow: none;
+    padding: 2rem 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+    #latestNews .newsBox .newsLeft {
+        padding-left: 5rem;
+    }
+    #latestNews .newsBox .newsRight {
+        padding-right: 5rem;
+    }
+    #latestNews .newsBox h3 {
+        font-size: 3rem;
+    }
+}

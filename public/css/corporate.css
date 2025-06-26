@@ -14,7 +14,6 @@ body {
   align-items: center;
   justify-content: center;
   background: #fff;
-  margin: 0.3125rem 0 0 0;
   padding: 0;
   height: 41.875rem;
   width: 100%;
@@ -60,18 +59,40 @@ body {
   height: 41.875rem;
 }
 
+/* Enhanced image transition - smooth sliding */
 .corporate-right img {
   width: 33.33%;
   object-fit: cover;
   height: 41.875rem;
-  opacity: 1;
-  transition: opacity 0.4s ease, filter 0.4s ease;
-  filter: blur(0px);
+  position: absolute;
+  transition: transform 1.5s ease-in-out;
+  filter: none;
 }
 
-.corporate-right img.fade-out {
-  opacity: 0.8;
-  filter: blur(0.1875rem);
+.corporate-right img:nth-child(1) {
+  left: 0;
+  z-index: 3;
+  transform: translateX(0);
+}
+
+.corporate-right img:nth-child(2) {
+  left: 33.33%;
+  z-index: 2;
+  transform: translateX(0);
+}
+
+.corporate-right img:nth-child(3) {
+  left: 66.66%;
+  z-index: 1;
+  transform: translateX(0);
+}
+
+.corporate-right img.slide-left {
+  transform: translateX(-100%);
+}
+
+.corporate-right img.slide-right {
+  transform: translateX(100%);
 }
 
 /* Partners Section Styles */
@@ -764,11 +785,59 @@ button[type="submit"] {
     min-height: 100vh;
   }
   
+  /* Mobile: Corporate right on top */
+  .corporate-right {
+    width: 100%;
+    height: 50vh;
+    min-height: 20rem;
+    display: flex;
+    flex-direction: row;
+    order: 2;
+  }
+  
+  /* Mobile images fill entire height */
+  .corporate-right img {
+    width: 33.33%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    left: auto;
+    transition: transform 1.5s ease-in-out;
+  }
+  
+  .corporate-right img:nth-child(1) {
+    left: 0;
+    height: 50vh;
+    transform: translateX(0);
+  }
+  
+  .corporate-right img:nth-child(2) {
+    left: 0;
+     height: 50vh;
+    transform: translateX(0);
+  }
+  
+  .corporate-right img:nth-child(3) {
+    left: 0;
+    height: 50vh;
+    transform: translateX(0);
+  }
+  
+  .corporate-right img.slide-left {
+    transform: translateX(-100%);
+  }
+  
+  .corporate-right img.slide-right {
+    transform: translateX(100%);
+  }
+  
+  /* Mobile: Corporate left on bottom */
   .corporate-left {
     width: 100%;
     height: 50vh;
     min-height: 20rem;
     padding: 2rem;
+    order: 2;
   }
   
   .corporate-left h1 {
@@ -779,21 +848,8 @@ button[type="submit"] {
     font-size: 1.25rem;
   }
   
-  .corporate-right {
-    width: 100%;
-    height: 50vh;
-    min-height: 20rem;
-    /* flex-direction: column; */
-  }
-  
-  .corporate-right img {
-    width: 100%;
-    height: 33.33%;
-    min-height: 6.67rem;
-  }
-  
   .partners h2 {
-    margin: 0 1rem 1.875rem 1rem;
+    margin: -30px 1rem 1.875rem 1rem;
     font-size: 1.125rem;
   }
   

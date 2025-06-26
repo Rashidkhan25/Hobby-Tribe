@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - Draw Your Way Back!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(to right, #f96c85, #faaa5d);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .canvas-container {
+      background: rgba(255, 255, 255, 0.406);
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+    }
+
+    canvas {
+      border: 2px dashed #fff;
+      border-radius: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.365);
+      width: 100%;
+      height: auto;
+      touch-action: none;
+      cursor: none;
+    }
+
+    #brushCursor {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+      display: none;
+    }
+
+    .tools {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .tools input[type="color"],
+    .tools button {
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tools input[type="color"] {
+      height: 3rem;
+      width: 3rem;
+      padding: 0;
+      border: 5px solid white;
+    }
+
+    .tools button {
+      background-color: white;
+      color: #ff3c00;
+      transition: all 0.3s ease;
+    }
+
+    .tools button:hover {
+      background-color: #ff3c00;
+      color: white;
+    }
+
+    a.back-home {
+      background: white;
+      color: #7300ff;
+      padding: 0.75rem 2rem;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    a.back-home:hover {
+      background: #7300ff;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      canvas {
+        height: 300px;
+      }
+
+      #brushCursor {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎨 404 - Oops!</h1>
+  <p>Looks like you've painted outside the lines. While you're here, unleash your inner artist!</p>
+
+  <div class="canvas-container">
+    <canvas id="drawCanvas" width="500" height="350"></canvas>
+    <div id="brushCursor"></div>
+    <div class="tools">
+      <input type="color" id="colorPicker" value="#00000000">
+      <button onclick="clearCanvas()">Clear</button>
+    </div>
+  </div>
+
+  <a class="back-home" href="/">🏠 Back to Home</a>
+
+  <script>
+    const canvas = document.getElementById("drawCanvas");
+    const ctx = canvas.getContext("2d");
+    const colorPicker = document.getElementById("colorPicker");
+    const brushCursor = document.getElementById("brushCursor");
+
+    let drawing = false;
+
+    function getPos(evt) {
+      const rect = canvas.getBoundingClientRect();
+      const x = evt.touches ? evt.touches[0].clientX : evt.clientX;
+      const y = evt.touches ? evt.touches[0].clientY : evt.clientY;
+      return { x: x - rect.left, y: y - rect.top };
+    }
+
+    function updateBrushCursor(e) {
+      const pos = getPos(e);
+      brushCursor.style.left = `${pos.x + canvas.offsetLeft}px`;
+      brushCursor.style.top = `${pos.y + canvas.offsetTop}px`;
+      brushCursor.style.backgroundColor = colorPicker.value;
+      brushCursor.style.display = 'block';
+    }
+
+    function startDraw(e) {
+      drawing = true;
+      const pos = getPos(e);
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+      updateBrushCursor(e);
+    }
+
+    function draw(e) {
+      if (!drawing) return;
+      const pos = getPos(e);
+      ctx.lineWidth = 4;
+      ctx.lineCap = "round";
+      ctx.strokeStyle = colorPicker.value;
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+      updateBrushCursor(e);
+    }
+
+    function stopDraw() {
+      drawing = false;
+      ctx.beginPath();
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+    }
+
+    canvas.addEventListener("mousedown", startDraw);
+    canvas.addEventListener("mousemove", (e) => {
+      draw(e);
+      updateBrushCursor(e);
+    });
+    canvas.addEventListener("mouseup", stopDraw);
+    canvas.addEventListener("mouseleave", () => {
+      stopDraw();
+      brushCursor.style.display = 'none';
+    });
+
+    canvas.addEventListener("touchstart", startDraw, { passive: false });
+    canvas.addEventListener("touchmove", (e) => {
+      e.preventDefault();
+      draw(e);
+      updateBrushCursor(e);
+    }, { passive: false });
+    canvas.addEventListener("touchend", () => {
+      stopDraw();
+      brushCursor.style.display = 'none';
+    });
+
+    // Hide brush when mouse leaves
+    document.addEventListener("mouseout", () => {
+      brushCursor.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<%- include("partials/header") -%>
+
+    <div class="container-fluid px-0">
+        <div class="container">
+            <section id="blogDetails">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <section id="blogPost">
+                            <div class="post">
+                                <div class="card" style="border: none">
+                                    <img src="/images/<%=blog.image%>" class="card-img-top" style="max-height: 500px;">
+                                    <div class="card-body p-5">
+                                        <h5 class="card-title font-weight-bold">
+                                            <%= blog.title %>
+                                        </h5>
+                                        <div class="dateAndName">
+                                            <div>
+                                                <i class="fa fa-calendar"></i>
+                                                <span class="ml-2"><%= blog.date %></span>
+                                            </div>
+                                            <!-- <div class="ml-5 d-flex align-items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                                    fill="currentColor" class="bi bi-backspace-reverse"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M9.854 5.146a.5.5 0 0 1 0 .708L7.707 8l2.147 2.146a.5.5 0 0 1-.708.708L7 8.707l-2.146 2.147a.5.5 0 0 1-.708-.708L6.293 8 4.146 5.854a.5.5 0 1 1 .708-.708L7 7.293l2.146-2.147a.5.5 0 0 1 .708 0z" />
+                                                    <path
+                                                        d="M2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7.08a2 2 0 0 0 1.519-.698l4.843-5.651a1 1 0 0 0 0-1.302L10.6 1.7A2 2 0 0 0 9.08 1H2zm7.08 1a1 1 0 0 1 .76.35L14.682 8l-4.844 5.65a1 1 0 0 1-.759.35H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h7.08z" />
+                                                </svg>
+                                                <span class="ml-2">Art & Craft</span>
+                                            </div> -->
+                                        </div>
+                                        <%- blog.content %>
+                                            <div class="viewsShare">
+                                                <p class="mb-0"><b>Shares:</b>
+                                                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://thehobbytribe.com/blog/<%=blog.url%>"
+                                                        target="_blank">
+                                                        <i class="fa fa-facebook-official ml-2"></i>
+                                                    </a>
+                                                    <a href=" https://www.linkedin.com/sharing/share-offsite/?url=https://thehobbytribe.com/blog/<%=blog.url%>"
+                                                        target="_blank">
+                                                        <i class="fa fa-linkedin ml-2"></i>
+                                                    </a>
+                                                </p>
+                                                <div class="likeViews">
+                                                    <!-- <div class="likes mr-3">
+                                                        <i class="fa fa-heart"></i>
+                                                        <span>01</span>
+                                                    </div> -->
+                                                    <div class="views">
+                                                        <i class="fa fa-eye"></i>
+                                                        <span><%=blog.views%></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- <section id="commentsSection">
+                            <h2 class="mb-4">Comments</h2>
+                            <% for (let i=0; i < 4; i++) { %>
+                                <div class="comments">
+                                    <img src="images/Comments3.png" alt="">
+                                    <div class="comment">
+                                        <h5>John Mackey</h5>
+                                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate neque
+                                            itaque, veniam asperiores quisquam fugit illum nesciunt quae nam, quaerat
+                                            minus sit labore aut dolor fugiat quidem! Molestiae, nemo cupiditate?</p>
+                                    </div>
+                                </div>
+                                <% } %>
+                        </section>
+                        <section id="postComment">
+                            <h2 class="mb-4">Post Your Comment</h2>
+                            <div class="input-group input-group-lg">
+                                <textarea class="form-control" placeholder="Comment"></textarea>
+                            </div>
+                            <div class="postButton mt-3">
+                                <a href="" class="btn btn-lg">Post</a>
+                            </div>
+                        </section> -->
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="recent-post">
+                            <div class="card mt-lg-0 mt-5">
+                                <div class="card-body">
+                                    <h5 class="card-title">Recent Post</h5>
+                                    <ul>
+                                        <% for(let i = 0; i < recentBlogs.length; i++) { %>
+                                            <li>
+                                                <a href="/blog/<%=recentBlogs[i].url%>">
+                                                    <div class="card mb-4">
+                                                        <img src="/images/<%=recentBlogs[i].image%>" class="card-img-top" alt="">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title font-weight-bold">
+                                                                <%= recentBlogs[i].title %>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           <!-- <section id="latestNews">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="newsBox">
+                            <div class="row align-items-center">
+                                <div class="col-sm-6 newsLeft">
+                                    <h3>Get The Latest News & Updates On Your Box</h3>
+                                </div>
+                                <div class="col-sm-6 newsRight">
+                                    <div class="input-group">
+                                        <div class="autocomplete">
+                                            <input type="text" id="myInput" class="form-control"
+                                                placeholder="Your Email" />
+                                            <i class="fa fa-envelope-o"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+             <section id="relevantHobbies">
+                <div class="row my-4">
+                    <div class="col-sm-12">
+                        <div class="relevantH">
+                            <h2 class="mb-0 pt-1">Relevant <span>Hobbies</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <% for (let i=0; i < 4; i++) { %>
+                        <div class="col-xl-3 col-lg-4 col-sm-6">
+                            <div class="category" name="Makeup Hair Styling" data-aos="zoom-out"
+                                data-aos-easing="ease-in-out">
+                                <a href="/beauty-wellness-live" style="text-decoration: none;color: black;">
+                                    <div style="position: relative;">
+                                        <img class="gif" src="/images/Makeup.png" alt="Beauty & Wellness">
+                                        <div class="topLeft">
+                                            <span>Dance</span>
+                                            <span>Age 1 To 15</span>
+                                        </div>
+                                        <div class="topRight">
+                                            <i class="fa fa-heart-o"></i>
+                                        </div>
+                                        <div class="cardBody p-3">
+                                            <div class="cardTitle mt-0">
+                                                <h6>Beauty & Wellness</h6>
+                                                <p>2045 student</p>
+                                            </div>
+                                            <div class="teacherDetail">
+                                                <div class="td">
+                                                    <img src="images/Teachers/Sakshi-arts-front.jpg" alt="">
+                                                    <p class="ml-2"><b>Sakshi Shah</b></p>
+                                                </div>
+                                                <div class="rating">
+                                                    <div>
+                                                        <input type="radio" id="<%=i%><%=i%>star5"
+                                                            name="rating<%=i%><%=i%>" value="5" disabled
+                                                            checked /><label class="full"
+                                                            for="<%=i%><%=i%>star5"></label>
+                                                        <input type="radio" id="<%=i%>star4" name="rating<%=i%><%=i%>"
+                                                            value="4" disabled /><label class="full"
+                                                            for="<%=i%><%=i%>star4"></label>
+                                                        <input type="radio" id="<%=i%>star3" name="rating<%=i%><%=i%>"
+                                                            value="3" disabled /><label class="full"
+                                                            for="<%=i%><%=i%>star3"></label>
+                                                        <input type="radio" id="<%=i%>star2" name="rating<%=i%><%=i%>"
+                                                            value="2" disabled /><label class="full"
+                                                            for="<%=i%><%=i%>star2" title="Kinda bad - 2 stars"></label>
+                                                        <input type="radio" id="<%=i%>star1" name="rating<%=i%><%=i%>"
+                                                            value="1" disabled /><label class="full"
+                                                            for="<%=i%><%=i%>star1"></label>
+                                                    </div>
+                                                    <p class="ml-1">4.2 (30)</p>
+                                                </div>
+                                            </div>
+                                            <div class="classDetail">
+                                                <div class="classHrs">
+                                                    <i class="fa fa-clock-o"></i>
+                                                    <p class="ml-1">60 min</p>
+                                                </div>
+                                                <div class="classDate">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <p class="ml-1">31/12/2021</p>
+                                                </div>
+                                                <div class="classSession">
+                                                    <i class="fa fa-hourglass-half"></i>
+                                                    <p class="ml-1">8 Sessions</p>
+                                                </div>
+                                            </div>
+                                            <div class="classDayTime">
+                                                <div class="classDays">
+                                                    <p>Day: <span>S</span><span>M</span><span
+                                                            class="active">T</span><span>W</span><span
+                                                            class="active">T</span><span>F</span><span>S</span></p>
+                                                </div>
+                                                <div class="classTimes">
+                                                    <p>Time: <span>9pm IST; 2:30pm GMT</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="priceAndButtons">
+                                                <div class="price">
+                                                    <span>
+                                                        <b><i class="fa fa-inr"></i> 1500</b> <del class="ml-1"><i
+                                                                class="fa fa-inr"></i>3200</del>
+                                                    </span>
+                                                    <p style="color: gray; font-weight: 900;">(<i
+                                                            class="fa fa-inr"></i>187.5 per session)</p>
+                                                </div>
+                                                <div class="buttons">
+                                                    <a href="" class="btn btn-outline-secondary btn-sm shadow-none atc"
+                                                        style="color: #000;">Add
+                                                        To
+                                                        Cart</a>
+                                                    <a href="" class="btn btn-outline-primary btn-sm shadow-none ft"
+                                                        style="color: #fff;">Free
+                                                        Trial</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <% } %>
+
+                </div>
+            </section> -->
+        </div>
+    </div>
+
+    <%- include("partials/onlyFooter") -%>

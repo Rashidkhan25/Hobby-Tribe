@@ -1,0 +1,117 @@
+#recentUpdate {
+    margin-top: 10rem;
+}
+#recentUpdate img {
+    width: 100%;
+    max-width: 50rem;
+}
+#recentUpdate h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 1.5rem;
+}
+#recentUpdate h2 span {
+    color: red;
+}
+
+#blogs {
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+}
+#blogs .flip {
+    background-color: transparent;
+    width: 30rem;
+    height: 30rem;
+    margin-bottom: 3rem;
+    text-align: initial;
+    color: white;
+    position: relative;
+}
+#blogs .flip-inner {
+   width: 100%;
+   height: 100%;
+}
+#blogs .thisDiv {
+    width: 100%;
+    height: 100%;
+}
+#blogs .redDiv {
+    position: absolute;
+    background-color: rgb(249, 13, 2, 0.5);
+    width: 100%;
+    bottom: 0;
+    padding: 1rem 3rem;
+}
+#blogs .redDiv span {
+    font-size: 1.2rem;
+}
+#blogs .redDiv h5 {
+    font-size: 2.2rem;
+}
+#blogs .redDiv .dateAndName {
+    display: flex;
+}
+
+#latestNews {
+    margin-top: 8rem;
+}
+#latestNews .newsBox {
+    padding: 3rem;
+    background-color: red;
+}
+/* #latestNews .newsBox .newsLeft {
+    padding-left: inherit;
+} */
+/* #latestNews .newsBox .newsRight {
+    padding-right: 0;
+} */
+#latestNews .newsBox h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+#latestNews .newsBox .autocomplete {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+#latestNews .newsBox .autocomplete > i {
+    position: absolute;
+    right: 1rem;
+    z-index: 9;
+    font-size: 1.2rem;
+    background-color: orange;
+    color: white;
+    padding: .8rem;
+}
+#latestNews .newsBox .autocomplete .form-control {
+    /* width: 25.8rem; */
+    font-size: 1.5rem;
+    border-color: #f90d02;
+    box-shadow: none;
+    padding: 2rem 2rem;
+}
+
+@media only screen and (min-width: 576px) {
+    #blogs .flip {
+        width: 35rem;
+        height: 35rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #recentUpdate .order2 {
+        order: 2;
+    }
+
+    #latestNews .newsBox .newsLeft {
+        padding-left: 5rem;
+    }
+    #latestNews .newsBox .newsRight {
+        padding-right: 5rem;
+    }
+    #latestNews .newsBox h3 {
+        font-size: 3rem;
+    }
+}
